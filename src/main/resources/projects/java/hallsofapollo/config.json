@@ -1,0 +1,4 @@
+{
+  "MetAPI":"https://collectionapi.metmuseum.org/public/collection/v1/search?q=",
+  "database": "preferences.sqlite3"
+}
