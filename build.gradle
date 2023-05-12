@@ -14,9 +14,9 @@ jar {
     }
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 
-    from {
+    /*from {
         configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
-    }
+    }*/
 }
 
 group 'projects.java'
