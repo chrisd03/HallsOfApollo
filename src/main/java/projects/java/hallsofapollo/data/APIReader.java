@@ -13,7 +13,8 @@ import java.util.stream.Collectors;
 
 public class APIReader {
     private static ConfigSingleton config = ConfigSingleton.getInstance();
-    private static String metAPIQuery = config.getMetURL();
+    private static String metSearchAPIQuery = config.getMetSearchURL();
+    private static String metObjectAPIQuery = config.getMetObjectURL();
     public static void main(String[] args){
     }
     private static String getJSONText(String url){
@@ -29,9 +30,15 @@ public class APIReader {
         }
     }
 
-    public JSONObject queryAPI(String query){
-        metAPIQuery += query;
-        String JSONText = getJSONText(metAPIQuery);
+    public JSONObject queryAPI(String type, String query){
+        String JSONText = "";
+        if(type.equals("search")){
+            metSearchAPIQuery += query;
+            JSONText = getJSONText(metSearchAPIQuery);
+        }else if(type.equals("object")){
+            metObjectAPIQuery += query;
+            JSONText = getJSONText(metObjectAPIQuery);
+        }
         JSONObject queryResult = new JSONObject(JSONText);
         return queryResult;
     }

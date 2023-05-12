@@ -10,7 +10,8 @@ import java.io.IOException;
 public class ConfigSingleton {
     private static final String configurationFileName = "src/main/resources/projects/java/hallsofapollo/config.json";
     private static ConfigSingleton instance;
-    private String metURL;
+    private String metSearchURL;
+    private String metObjectURL;
     private String databaseName;
 
     private ConfigSingleton() {
@@ -24,8 +25,11 @@ public class ConfigSingleton {
         return instance;
     }
 
-    public String getMetURL() {
-        return metURL;
+    public String getMetSearchURL() {
+        return metSearchURL;
+    }
+    public String getMetObjectURL() {
+        return metObjectURL;
     }
 
     public String getDatabaseFilename() {
@@ -35,7 +39,8 @@ public class ConfigSingleton {
     private void setFieldsFromJSON() {
         String jsonText = readJSON(configurationFileName);
         JSONObject root = new JSONObject(jsonText);
-        metURL = root.getString("MetAPI");
+        metSearchURL = root.getString("MetSearchAPI");
+        metObjectURL = root.getString("MetObjectAPI");
         databaseName = root.getString("database");
     }
 

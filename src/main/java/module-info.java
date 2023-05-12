@@ -5,6 +5,7 @@ module projects.java.hallsofapollo {
     requires org.controlsfx.controls;
     requires org.kordamp.bootstrapfx.core;
     requires org.json;
+    requires java.desktop;
 
     opens projects.java.hallsofapollo to javafx.fxml;
     exports projects.java.hallsofapollo;
