@@ -1,4 +1,4 @@
-package projects.java.hallsofapollo;
+package projects.java.hallsofapollo.presentation;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

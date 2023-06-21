@@ -9,4 +9,6 @@ module projects.java.hallsofapollo {
 
     opens projects.java.hallsofapollo to javafx.fxml;
     exports projects.java.hallsofapollo;
+    exports projects.java.hallsofapollo.presentation;
+    opens projects.java.hallsofapollo.presentation to javafx.fxml;
 }
