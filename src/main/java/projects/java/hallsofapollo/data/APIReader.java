@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 
 public class APIReader {
     private static ConfigSingleton config = ConfigSingleton.getInstance();
-    private static String metSearchAPIQuery = config.getMetSearchURL();
+    private static String metSearchAPIQuery = config.getMetArtistSearchURL();
     private static String metObjectAPIQuery = config.getMetObjectURL();
     public static void main(String[] args){
     }
@@ -46,7 +46,7 @@ public class APIReader {
     }
 
     private void resetSearchQuery(){
-        metSearchAPIQuery = config.getMetSearchURL();
+        metSearchAPIQuery = config.getMetArtistSearchURL();
     }
 
     private void resetObjectQuery(){
