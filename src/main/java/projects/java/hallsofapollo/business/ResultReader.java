@@ -21,17 +21,16 @@ public class ResultReader {
     protected JSONArray searchResults;
 
     public BufferedImage findImage() throws IOException {
+        String url = "";
         Random random = new Random();
         getSearchResultIDs();
-        sendObjectID(searchResults.getInt(random.nextInt(searchResults.length())));
-        qc.performObjectQuery();
-        queryResults = qc.getQueryResults();
-        String url = getImageURL(queryResults);
-        if(!url.equals("")){
-            return ImageIO.read(new URL(url));
-        }else{
-            throw new IOException("No image for this piece");
+        while(url.equals("")){
+            sendObjectID(searchResults.getInt(random.nextInt(searchResults.length())));
+            qc.performObjectQuery();
+            queryResults = qc.getQueryResults();
+            url = getImageURL(queryResults);
         }
+        return ImageIO.read(new URL(url));
     }
 
     private void getSearchResultIDs(){
