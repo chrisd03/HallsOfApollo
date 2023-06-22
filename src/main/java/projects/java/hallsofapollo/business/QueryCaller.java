@@ -13,7 +13,7 @@ public class QueryCaller {
     }
     private JSONObject queryResults;
     private String search;
-    private int objectID = 123;
+    private int objectID;
     private APIReader apiReader = new APIReader();
 
     public void setSearch(String search) {
@@ -31,4 +31,5 @@ public class QueryCaller {
     protected void performObjectQuery(){
         queryResults = apiReader.queryAPI("object", objectID + "");
     }
+
 }

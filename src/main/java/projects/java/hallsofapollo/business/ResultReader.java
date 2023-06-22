@@ -27,7 +27,11 @@ public class ResultReader {
         qc.performObjectQuery();
         queryResults = qc.getQueryResults();
         String url = getImageURL(queryResults);
-        return ImageIO.read(new URL(url));
+        if(!url.equals("")){
+            return ImageIO.read(new URL(url));
+        }else{
+            throw new IOException("No image for this piece");
+        }
     }
 
     private void getSearchResultIDs(){

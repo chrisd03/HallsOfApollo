@@ -26,12 +26,16 @@ public class MainController {
     private void getSearch(){
         search = searchBox.getText().strip();
     }
+    @FXML void clearSearch(){
+        searchBox.setText("");
+    }
     @FXML
     private void sendSearch(ActionEvent ae){
         getSearch();
         qc.setSearch(search);
         qc.performSearchQuery();
         showImage(convertImage());
+        clearSearch();
     }
 
     private Image convertImage(){

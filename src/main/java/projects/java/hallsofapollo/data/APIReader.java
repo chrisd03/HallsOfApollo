@@ -35,11 +35,21 @@ public class APIReader {
         if(type.equals("search")){
             metSearchAPIQuery += query;
             JSONText = getJSONText(metSearchAPIQuery);
+            resetSearchQuery();
         }else if(type.equals("object")){
             metObjectAPIQuery += query;
             JSONText = getJSONText(metObjectAPIQuery);
+            resetObjectQuery();
         }
         JSONObject queryResult = new JSONObject(JSONText);
         return queryResult;
+    }
+
+    private void resetSearchQuery(){
+        metSearchAPIQuery = config.getMetSearchURL();
+    }
+
+    private void resetObjectQuery(){
+        metObjectAPIQuery = config.getMetObjectURL();
     }
 }
