@@ -1,5 +1,5 @@
 {
-  "MetSearchAPI":"https://collectionapi.metmuseum.org/public/collection/v1/search?artistOrCulture=true&q=",
+  "MetSearchAPI":"https://collectionapi.metmuseum.org/public/collection/v1/search?artistOrCulture=true&hasImages=true&q=",
   "MetObjectAPI": "https://collectionapi.metmuseum.org/public/collection/v1/objects/",
   "database": "preferences.sqlite3"
 }
